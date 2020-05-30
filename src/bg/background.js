@@ -15,7 +15,7 @@ const playlistRegex = [
     }
 ];
 
-chrome.webRequest.onBeforeRequest.addListener(handleRequest, { urls: ["*://*.hbonow.com/*master*m3u8"] }, ["blocking"]);
+chrome.webRequest.onBeforeRequest.addListener(handleRequest, { urls: ["*://*.hbomax.com/*master*m3u8"] }, ["blocking"]);
 
 chrome.storage.sync.get({ "resolution": 1080 }, function(data) {
     initAnalytics("background.html", data["resolution"] + "p");
@@ -36,7 +36,7 @@ chrome.runtime.onInstalled.addListener(function() {
             conditions: [
                 new chrome.declarativeContent.PageStateMatcher({
                     pageUrl: {
-                        hostContains: "hbonow.com"
+                        hostContains: "hbomax.com"
                     },
                 })
             ],
